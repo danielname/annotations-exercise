@@ -3,7 +3,7 @@
  */
 import java.util.ArrayList;
 import java.util.List;
-@SuppressWarnings
+@SuppressWarnings("unchecked")
 public class Author extends Person {
     private List books;
 
@@ -15,9 +15,9 @@ public class Author extends Person {
     /**
      * @deprecated Use publishedBooks instead
      */
-    @SuppressWarnings
+    @Deprecated
     public List<String> getBooks() {
-        return publishedBooks();
+        return books;
     }
 
     public List<String> publishedBooks() {
@@ -28,8 +28,8 @@ public class Author extends Person {
         books.add(book);
     }
 
-    @SuppressWarnings
-    public String sortName() {
+    @Override
+    public String fullName() {
         return String.format("%s, %s", lastName, firstName);
     }
 }
